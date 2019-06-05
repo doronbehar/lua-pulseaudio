@@ -4,7 +4,7 @@ INCS     := $(shell pkg-config --cflags $(PKGS)) -I./
 CFLAGS   := -std=gnu99 -ggdb -W -Wall -Wextra -fPIC -pedantic $(INCS) $(CFLAGS)
 
 LIBS     := $(shell pkg-config --libs $(PKGS))
-LDFLAGS  := $(LIBS) $(LDFLAGS) -Wl,--export-dynamic
+LDFLAGS  := $(LIBS) $(LDFLAGS) $(LIBFLAG) -Wl,--export-dynamic
 
 SRCS  = $(wildcard *.c)
 HEADS = $(wildcard *.h)
@@ -23,5 +23,7 @@ $(OBJS): $(HEADS)
 clean:
 	rm -f pulseaudio.so $(OBJS)
 
-all: pulseaudio.so
+install: pulseaudio.so
+	cp pulseaudio.so $(INST_LIBDIR)
 
+all: pulseaudio.so
