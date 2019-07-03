@@ -12,7 +12,7 @@ supported_platforms = {
 	"linux"
 }
 dependencies = {
-	"lua >= 5.3",
+	"lua >= 5.2",
 }
 external_dependencies = {
 
