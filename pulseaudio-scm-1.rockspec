@@ -1,7 +1,7 @@
 package = "pulseaudio"
 version = "scm-1"
 source = {
-	url = "https://gitlab.com/doronbehar/lua-pulseaudio",
+	url = "git://github.com/doronbehar/lua-pulseaudio",
 }
 description = {
 	summary = "Bindings to libpulse",

@@ -1,11 +1,12 @@
 package = "pulseaudio"
 version = "0.1-1"
 source = {
-	url = "https://gitlab.com/doronbehar/lua-pulseaudio",
+	url = "git://github.com/doronbehar/lua-pulseaudio",
+	tag = "v0.1"
 }
 description = {
 	summary = "Bindings to libpulse",
-	homepage = "https://gitlab.com/doronbehar/lua-pulseaudio",
+	homepage = "https://github.com/doronbehar/lua-pulseaudio",
 	license = "Apache v2.0"
 }
 supported_platforms = {
