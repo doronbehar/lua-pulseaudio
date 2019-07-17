@@ -1,11 +1,11 @@
 package = "pulseaudio"
 version = "scm-1"
 source = {
-	url = "git://https://gitlab.com/doronbehar/lua-pulseaudio_cli",
+	url = "https://gitlab.com/doronbehar/lua-pulseaudio",
 }
 description = {
 	summary = "Bindings to libpulse",
-	homepage = "https://github.com/liaonau/lua-pulseaudio",
+	homepage = "https://gitlab.com/doronbehar/lua-pulseaudio",
 	license = "Apache v2.0"
 }
 supported_platforms = {
@@ -15,7 +15,7 @@ dependencies = {
 	"lua >= 5.2",
 }
 external_dependencies = {
-
+	-- pulseaudio and pkgconfig, make file takes care of the rest
 }
 build = {
 	type = "make",
