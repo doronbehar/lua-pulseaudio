@@ -1,4 +1,6 @@
-PKGS      = libpulse lua
+# Support luajit and check for it
+LUA = $(shell lua -e 'if type(jit) == "table" then print "luajit" else print "lua" end')
+PKGS      = libpulse $(LUA)
 
 INCS     := $(shell pkg-config --cflags $(PKGS)) -I./
 CFLAGS   := -std=gnu99 -ggdb -W -Wall -Wextra -fPIC -pedantic $(INCS) $(CFLAGS)
@@ -22,6 +24,9 @@ $(OBJS): $(HEADS)
 
 clean:
 	rm -f pulseaudio.so $(OBJS)
+
+test:
+	lua -e "require('pulseaudio')"
 
 install: pulseaudio.so
 	cp pulseaudio.so $(INST_LIBDIR)

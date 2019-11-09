@@ -12,7 +12,7 @@ supported_platforms = {
 	"linux"
 }
 dependencies = {
-	"lua >= 5.2",
+	"lua >= 5.1",
 }
 external_dependencies = {
 	-- pulseaudio and pkgconfig, make file takes care of the rest
