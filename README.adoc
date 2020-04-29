@@ -1,21 +1,30 @@
-# PulseAudio Lua C bindings
+= PulseAudio Lua C bindings
 
-This project is a fork of [@liaonau](https://github.com/liaonau)'s [original project](https://github.com/liaonau/lua-pulseaudio). The need to fork it came up after [some open pull requests of mine](https://github.com/liaonau/lua-pulseaudio/pulls/doronbehar) got ignored. Besides Lua 5.2 and 5.3 support, I forked because I wanted to modernise this project by adding the following as well:
+This project is a fork of [@liaonau](https://github.com/liaonau)’s
+https://github.com/liaonau/lua-pulseaudio[original project]. The need to
+fork it came up after
+https://github.com/liaonau/lua-pulseaudio/pulls/doronbehar[some open
+pull requests of mine] got ignored. Besides Lua 5.2 and 5.3 support, I
+forked because I wanted to modernise this project by adding the
+following as well:
 
-- README
-- LuaRocks spec
+* README
+* LuaRocks spec
 
-## Install
+== Install
 
-```
+....
 luarocks install pulseaudio
-```
+....
 
-## Usage
+== Usage
 
-For this demonstration, I assume you have penlight installed, just for the sake of [`pl.pretty`](https://stevedonovan.github.io/Penlight/api/libraries/pl.pretty.html).
+For this demonstration, I assume you have penlight installed, just for
+the sake of
+https://stevedonovan.github.io/Penlight/api/libraries/pl.pretty.html[`pl.pretty`].
 
-```lua
+[source,lua]
+----
 > inspect = require('pl.import_into')().pretty.write
 > pulseaudio = require("pulseaudio")
 > sinks = pulseaudio.get_sinks()
@@ -79,6 +88,14 @@ For this demonstration, I assume you have penlight installed, just for the sake 
 > pulseaudio.set_sink_volume(0, 95)
 -- Lastly, setting the default sink is easy, using the index / name of the requested sink:
 > pulseaudio.set_default_sink(1)
-```
+----
 
-I use this Luarock as a dependency for another Luarock I maintain: [`lua-pulseaudio_cli`](https://gitlab.com/doronbehar/lua-pulseaudio_cli). In a way, this is a 'real world' example of this library used. [`lua-pulseaudio_cli`](https://gitlab.com/doronbehar/lua-pulseaudio_cli) is a higher level API for pulseaudio in comparison to `lua-pulseaudio`. I use [`lua-pulseaudio_cli`](https://gitlab.com/doronbehar/lua-pulseaudio_cli) in [my Awesome WM configuration](https://github.com/doronbehar/.config_awesome).
+I use this Luarock as a dependency for another Luarock I maintain:
+https://gitlab.com/doronbehar/lua-pulseaudio_cli[`lua-pulseaudio_cli`].
+In a way, this is a `real world' example of this library used.
+https://gitlab.com/doronbehar/lua-pulseaudio_cli[`lua-pulseaudio_cli`]
+is a higher level API for pulseaudio in comparison to `lua-pulseaudio`.
+I use
+https://gitlab.com/doronbehar/lua-pulseaudio_cli[`lua-pulseaudio_cli`]
+in https://github.com/doronbehar/.config_awesome[my Awesome WM
+configuration].
