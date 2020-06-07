@@ -2,10 +2,10 @@
 LUA = $(shell lua -e 'if type(jit) == "table" then print "luajit" else print "lua" end')
 PKGS      = libpulse $(LUA)
 
-INCS     := $(shell pkg-config --cflags $(PKGS)) -I./
+INCS     := $(shell pkg-config --cflags --print-errors $(PKGS)) -I./
 CFLAGS   := -std=gnu99 -ggdb -W -Wall -Wextra -fPIC -pedantic $(INCS) $(CFLAGS)
 
-LIBS     := $(shell pkg-config --libs $(PKGS))
+LIBS     := $(shell pkg-config --libs --print-errors $(PKGS))
 LDFLAGS  := $(LIBS) $(LDFLAGS) $(LIBFLAG) -Wl,--export-dynamic
 
 SRCS  = $(wildcard *.c)
