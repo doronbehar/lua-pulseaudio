@@ -83,9 +83,9 @@ https://stevedonovan.github.io/Penlight/api/libraries/pl.pretty.html[`pl.pretty`
 > pulseaudio.move_sink_input(sink_input_index, sink_index)
 -- Sets's a sink's volume:
 -- First argument is the sink's index / name and the second is the new volume to set, from 0 to 100
-> pulseaudio.set_sink_volume(1, 15)
+> pulseaudio.set_sink_volume(1, { volume = 15 })
 -- The same goes for setting a sink's input's volume:
-> pulseaudio.set_sink_volume(0, 95)
+> pulseaudio.set_sink_volume(0, { volume = 95 })
 -- Lastly, setting the default sink is easy, using the index / name of the requested sink:
 > pulseaudio.set_default_sink(1)
 ----
